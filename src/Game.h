@@ -3,15 +3,19 @@
 #include "SFML/Graphics.hpp"
 
 class Game {
-	public:
-		static void Start();
+public:
+   static void Start();
 
-	private:
-		static bool IsExiting();
-		static void GameLoop();
+ private:
+   static bool IsExiting();
+   static void GameLoop();
 
-		enum GameState { Uninitialized, ShowingSplash, Paused, ShowingMenu, Playing, Exiting };
+   static void ShowSplashScreen();
+   static void ShowMenu();
 
-		static GameState _gameState;
-		static sf::RenderWindow _mainWindow;
+   enum GameState { Uninitialized, ShowingSplash, Paused,
+           ShowingMenu, Playing, Exiting };
+
+   static GameState _gameState;
+   static sf::RenderWindow _mainWindow;
 };
